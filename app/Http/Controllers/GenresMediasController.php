@@ -13,7 +13,7 @@ class GenresMediasController extends Controller
         $new_genre_media->genre_id = $request->genre_id;
         $new_genre_media->save();
     }
-    public function delete_genre_media(Request $request){
+    public function delete_genre_media_by_id(Request $request){
         Genres_Medias::destroy($request->id);
     }
     public function update_genre_media_by_id(Request $request){
@@ -23,6 +23,6 @@ class GenresMediasController extends Controller
         return Genres_Medias::all();
     }
     public function get_genre_media_by_id(Request $request){
-        return response()->json(Genres_Medias::where('id', $request->id)->first());
+        return Genres_Medias::where('id', $request->id)->first();
     }
 }

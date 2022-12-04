@@ -23,6 +23,6 @@ class ActorsMediasController extends Controller
         return Actors_Medias::all();
     }
     public function get_actor_media_by_id(Request $request){
-        return response()->json(Actors_Medias::where('id', $request->id)->first());
+        return Actors_Medias::where('id', $request->id)->first();
     }
 }

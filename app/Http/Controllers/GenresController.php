@@ -12,7 +12,7 @@ class GenresController extends Controller
         $new_genre->name = $request->name;
         $new_genre->save();
     }
-    public function delete_genre(Request $request){
+    public function delete_genre_by_id(Request $request){
         Genres::destroy($request->id);
     }
     public function update_genre_by_id(Request $request){
@@ -22,6 +22,6 @@ class GenresController extends Controller
         return Genres::all();
     }
     public function get_genre_by_id(Request $request){
-        return response()->json(Genres::where('id', $request->id)->first());
+        return Genres::where('id', $request->id)->first();
     }
 }

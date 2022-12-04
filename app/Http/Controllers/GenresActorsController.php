@@ -13,7 +13,7 @@ class GenresActorsController extends Controller
         $new_genre_actor->actor_id = $request->actor_id;
         $new_genre_actor->save();
     }
-    public function delete_genre_actor(Request $request){
+    public function delete_genre_actor_by_id(Request $request){
         Genres_Actors::destroy($request->id);
     }
     public function update_genre_actor_by_id(Request $request){
@@ -23,6 +23,6 @@ class GenresActorsController extends Controller
         return Genres_Actors::all();
     }
     public function get_genre_actor_by_id(Request $request){
-        return response()->json(Genres_Actors::where('id', $request->id)->first());
+        return Genres_Actors::where('id', $request->id)->first();
     }
 }

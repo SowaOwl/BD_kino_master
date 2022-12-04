@@ -7,6 +7,8 @@ use App\Http\Controllers\GenresController;
 use App\Http\Controllers\GenresActorsController;
 use App\Http\Controllers\GenresMediasController;
 use App\Http\Controllers\MediasController;
+use App\Http\Controllers\SeriesController;
+use App\Http\Controllers\MoviesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,12 +24,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/add', [MediasController::class, 'add_media']);
+Route::get('/add', [MoviesController::class, 'add_movie']);
 
-Route::get('/delete', [MediasController::class, 'delete_media']);
+Route::get('/delete', [MoviesController::class, 'delete_movie_by_id']);
 
-Route::get('/update', [MediasController::class, 'update_media_by_id']);
+Route::get('/update', [MoviesController::class, 'update_movie_by_id']);
 
-Route::get('/all', [MediasController::class, 'get_medias']);
+Route::get('/all', [MoviesController::class, 'get_movies']);
 
-Route::get('/byid', [MediasController::class, 'get_media_by_id']);
+Route::get('/byid', [MoviesController::class, 'get_movie_by_id']);

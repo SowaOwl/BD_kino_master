@@ -23,6 +23,6 @@ class ActorController extends Controller
         return Actors::all();
     }
     public function get_actor_by_id(Request $request){
-        return response()->json(Actors::where('id', $request->id)->first());
+        return Actors::where('id', $request->id)->first();
     }
 }
