@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Actors extends Model
 {
     use HasFactory;
+    public function medias(){
+        return $this->belongsToMany(Medias::class);
+    }
+
+    public function genres(){
+        return $this->belongsToMany(Genres::class);
+    }
 }

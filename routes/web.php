@@ -33,3 +33,5 @@ Route::get('/update', [MoviesController::class, 'update_movie_by_id']);
 Route::get('/all', [MoviesController::class, 'get_movies']);
 
 Route::get('/byid', [MoviesController::class, 'get_movie_by_id']);
+
+Route::get('/test', [ActorController::class, 'test']);
