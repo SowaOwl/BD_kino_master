@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('actors_genres', function (Blueprint $table) {
+        Schema::create('genres_medias', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('medias_id');
             $table->unsignedBigInteger('genres_id');
-            $table->unsignedBigInteger('actors_id');
+            $table->timestamps();
 
-            $table->foreign('genre_id')->references('id')->on('genres')->onDelete('cascade');
-            $table->foreign('actor_id')->references('id')->on('actors')->onDelete('cascade');
+            $table->foreign('medias_id')->references('id')->on('medias')->onDelete('cascade');
+            $table->foreign('genres_id')->references('id')->on('genres')->onDelete('cascade');
         });
     }
 
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('genres_actors');
+        Schema::dropIfExists('genres_medias');
     }
 };

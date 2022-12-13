@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('media_id');
             $table->text('mini_desc');
             $table->timestamps();
         });

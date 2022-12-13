@@ -24,4 +24,7 @@ class GenresController extends Controller
     public function get_genre_by_id(Request $request){
         return Genres::where('id', $request->id)->first();
     }
+    public function get_genre_by_name(Request $request){
+        return Genres::where('id', $request->name)->first();
+    }
 }

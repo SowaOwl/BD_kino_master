@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('series', function (Blueprint $table) {
-            $table->id();
+        Schema::table('movies', function (Blueprint $table){
             $table->unsignedBigInteger('media_id');
-            $table->integer('serial_num');
-            $table->integer('season_num');
-            $table->text('season_desc');
-            $table->text('serial_desc');
-            $table->text('mini_desc');
-            $table->timestamps();
+        });
+
+        Schema::table('series', function (Blueprint $table){
+            $table->unsignedBigInteger('media_id');
         });
     }
 
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('series');
+        //
     }
 };

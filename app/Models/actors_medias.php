@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Genres_Actors extends Model
+class actors_medias extends Model
 {
     use HasFactory;
 }
