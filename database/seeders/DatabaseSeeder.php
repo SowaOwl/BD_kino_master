@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Http\Controllers\ActorsMediasController;
+use App\Http\Controllers\GenresMediasController;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,11 +16,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call(ActorTableSeeder::class);
+        $this->call(MediaTableSeeder::class);
+        $this->call(GenreTableSeeder::class);
+        $this->call(ActorsMediasTableSeeder::class);
+        $this->call(GenreMediasTableSeeder::class);
     }
 }
